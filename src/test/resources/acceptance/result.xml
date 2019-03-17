@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bible>
+	<!--
+		Slovenská biblická spoločnosť © <a href="http://biblickaspolocnost.sk/" target="_blank">www.biblickaspolocnost.sk</a> | Slovenský ekumenický preklad, 4. opravené vydanie, 2018.
+
+		Downloaded from www.biblia.sk on 2019-03-17.
+	-->
+	<OT>
+		<book n="Genezis"/>
+		<book n="Exodus"/>
+	</OT>
+	<NT>
+		<book n="Matúš"/>
+		<book n="Marek"/>
+	</NT>
+
+	<b n="Genezis" CHAPTERS="2">
+		<c n="1" VERSES="3">
+			<v n="1">Na počiatku stvoril Boh nebo a zem.</v>
+			<v n="2">Zem bola pustá a prázdna, tma bola nad prahlbinou a Boží duch sa vznášal nad vodami.</v>
+			<v n="3">Boh povedal: „Nech je svetlo!“ A bolo svetlo.</v>
+		</c>
+		<c n="2" VERSES="2">
+			<v n="1">Takto boli dokončené nebesia, zem i všetky ich zástupy.</v>
+			<v n="2">Siedmeho dňa Boh dokončil svoje dielo, ktoré konal, a v siedmy deň si Boh odpočinul od všetkého, čo utvoril.</v>
+		</c>
+	</b>
+	<b n="Exodus" CHAPTERS="1">
+		<c n="1" VERSES="2">
+			<v n="1">Toto sú mená synov Izraela, ktorí prišli s Jákobom do Egypta. Každý prišiel so svojou rodinou:</v>
+			<v n="2">Rúben, Šimeón, Lévi a Júda;</v>
+		</c>
+	</b>
+
+	<b n="Matúš" CHAPTERS="1">
+		<c n="1" VERSES="4">
+			<v n="1">Rodokmeň Ježiša Krista, syna Dávida, syna Abraháma.</v>
+			<v n="2">Abrahám splodil Izáka, Izák splodil Jákoba, Jákob splodil Júdu a jeho bratov,</v>
+			<v n="3">Júda s Tamar splodil syna Pereca a Zeracha, Perec splodil Checróna, Checrón splodil Ráma,</v>
+			<v n="4">Rám splodil Amminadába, Amminadáb splodil Nachšóna, Nachšón splodil Salmóna.</v>
+		</c>
+	</b>
+	<b n="Marek" CHAPTERS="2">
+		<c n="1" VERSES="1">
+			<v n="1">Začiatok evanjelia Ježiša Krista, Božieho Syna.</v>
+		</c>
+		<c n="2" VERSES="2">
+			<v n="1">Po niekoľkých dňoch sa znovu vrátil do Kafarnauma. Rozchýrilo sa, že je v dome.</v>
+			<v n="3">Vtedy k nemu prišli štyria, ktorí priniesli ochrnutého človeka.</v>
+		</c>
+	</b>
+</bible>

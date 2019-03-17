@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bible>
+	<!--
+		copyright line 1
+
+		copyright line 2
+	-->
+	<OT>
+		<book n="Genesis"/>
+	</OT>
+	<NT>
+		<book n="Matúš"/>
+	</NT>
+
+	<b n="Genesis" CHAPTERS="2">
+		<c n="1" VERSES="2">
+			<v n="4">chapter1 verse1</v>
+			<v n="2">chapter1 verse2</v>
+		</c>
+		<c n="2" VERSES="2">
+			<v n="1">chapter2 verse1</v>
+			<v n="7">chapter2 verse2</v>
+		</c>
+	</b>
+
+	<b n="Matúš" CHAPTERS="0">
+	</b>
+</bible>

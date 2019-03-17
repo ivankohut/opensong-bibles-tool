@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biblia.sk | 6 prekladov Biblie</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Čítajte, porovnávajte a hľadajte v Božom slove naprieč rôznymi prekladmi Biblie. Združujeme ľudí, ktorých spája láska k Bohu a k Jeho slovu.">
+    <meta name="keywords" content="biblie, biblia, on-line biblia, Písmo Sväté, Božie Slovo" />
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="O0ffc1vhuFgKIVKdCypXkO2JM4DNTTFrB5qKabAM">
+
+    <link rel="apple-touch-icon" sizes="16x16" href="/public/img/icons/biblia-sk_16.png">
+    <link rel="apple-touch-icon" sizes="32x32" href="/public/img/icons/biblia-sk_32.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="/public/img/icons/biblia-sk_128.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/public/img/icons/biblia-sk_512.png">
+
+
+    <link rel='shortcut icon' type='image/ico' href='/favicon.ico' />
+    <link rel="stylesheet" type="text/css" href="/public/css/app.css">
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+	window.addEventListener("load", function(){
+	window.cookieconsent.initialise({
+	  "palette": {
+	    "popup": {
+	      "background": "#252e39"
+	    },
+	    "button": {
+	      "background": "transparent",
+	      "text": "#14a7d0",
+	      "border": "#14a7d0"
+	    }
+	  },
+	  "position": "bottom-right",
+	  "content": {
+	    "message": "Táto webová aplikácia používa súbory cookies.",
+	    "dismiss": "Rozumiem",
+	    "link": "Viac informácií"
+	  }
+	})});
+	</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114947591-1"></script>
+    <script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-114947591-1');
+	  gtag('config', 'AW-810246291');
+
+	</script>
+
+    <script>
+	function gtag_report_conversion(url) {
+	  var callback = function () {
+	    if (typeof(url) != 'undefined') {
+	      window.location = url;
+	    }
+	  };
+	  gtag('event', 'conversion', {
+	      'send_to': 'AW-810246291/Arm3CJbs0H8Qk8GtggM',
+	      'value': 1.0,
+	      'currency': 'EUR',
+	      'transaction_id': '',
+	      'event_callback': callback
+	  });
+	  return false;
+	}
+	</script>
+
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+<body
+        onload="velkost_pisma();">
+
+<div class="notice">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="notice-content">
+
+                <p>
+                    Biblia.sk je neziskový projekt Slovenskej biblickej spoločnosti. Napriek tomu, že ju používame všetci zadarmo, jej udržiavanie a rozvoj zadarmo nie je. Vaša finančná podpora nám umožní pokračovať v šírení Božieho slova cez Biblia.sk, prostredníctvom vydávania Biblií a biblických titulov či prostredníctvom iných projektov. Možnosti podpory:
+                </p>
+
+                <div class="call-to-action-button">
+                    <a class="cta-button" href="https://biblickaspolocnost.sk/sbs/dve-percenta" target="_blank">Dve percentá</a>
+                    <a class="cta-button" href="https://biblickaspolocnost.darujme.sk/2203/" target="_blank">Iná podpora</a>
+                    <a class="cta-button-close" href="https://biblickaspolocnost.sk/projekty/aktualne" target="_blank">Viac informácií</a>
+                    <a class="cta-button-close close-notice">Nabudúce nezobrazovať</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    <div class="container">
+        <div class="columns is-gapless-on-mobile">
+
+            <div class="column is-2">
+                <div class="logo">
+                    <a href="http://www.biblia.sk">
+                        <img src="/public/img/icons/logo-biblia-sk-nove.svg">
+                    </a>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="nav">
+                    <ul>
+                        <li><a class="login-link" href="http://www.biblia.sk/login">Prihlásenie</a></li>
+                        <li style="display:none;"><a  href="http://www.biblia.sk/register">Registrácia</a></li>
+                        <li class="deaf-bible-link-main hide-on-mobile">
+                            <a href="http://www.biblia.sk/pre-nepocujucich">
+                                <p>Biblia pre<br><span style="color:#FFA259;">Nepočujúcich</span></p>
+                                <img src="/img/icons/hands-orange.svg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="second-nav">
+    <div class="container">
+        <div class="columns is-gapless">
+
+            <div class="column is-7">
+                <ul class="user-navigation">
+                    <li><a  class="active reading-interface"  href="http://www.biblia.sk"><img class="nav-svg-icon" src="/public/img/icons/open-book.svg"> <span class="hide-on-mobile">Čítanie</span></a></li>
+                    <li><a  href="http://www.biblia.sk/vyhladavanie"><img class="nav-svg-icon" src="/public/img/icons/search.svg"> <span class="hide-on-mobile">Vyhľadávanie</span></a></li>
+                    <li><a  href="/ine-materialy/metody-studia-biblie/metody-pozorovania-pri-studiu-biblie"><img class="nav-svg-icon" src="/public/img/icons/books-stack-of-three.svg"> <span class="hide-on-mobile">Iné materiály</span></a></li>
+                    <li class="show-on-mobile" style="display: inline-block !important;"><a href="http://www.biblia.sk/pre-nepocujucich" ><img style="width:30px;" class="nav-svg-icon" src="/public/img/icons/hands_white.svg"> <span class="hide-on-mobile">Pre Nepočujúcich</span></a></li>
+                </ul>
+            </div>
+
+            <div class="column hide-on-mobile hide-on-768">
+
+                <ul>
+                    <li><a href="https://biblickaspolocnost.sk/" target="_blank">Slovenská biblická spoločnosť</a></li>
+                    <li><a href="http://www.biblickaspolocnost.sk/obchod/index.php" target="_blank">E-shop</a></li>
+                    <li><a href="http://www.biblia.sk/kontaktny-formular"><img class="nav-svg-icon" src="/public/img/icons/new-email-outline.svg"></a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid reading-settings">
+    <div class="container">
+        <div class="columns" style="margin-bottom: 0;">
+            <div class="column hide-on-mobile hide-on-768">
+            </div>
+
+            <div class="column is-9">
+
+                <div class="columns" style="margin-bottom:0;">
+
+                    <div class="column hide-on-mobile hide-on-768">
+                    </div>
+
+                    <div class="column is-3">
+                        <label class="label-title">Preklad</label>
+                        <div class="chapter-input">
+                            <button id="translation_input_button" class="toggle" value="#translations_bar">
+                                <span id="translation_type">Ekumenický preklad</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="column is-4">
+                        <label class="label-title">Kniha</label>
+                        <div class="chapter-input">
+                            <button id="book_list_input_button" class="toggle" value="#book_list_bar">
+                                <span id="book_type">Genezis — Prvá Mojžišova kniha</span>
+                            </button>
+                            <form id="search_form_book" onsubmit="return false;">
+                                <input class="search-book-input" type="text" name="search_book_query" onclick='return false;'>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div class="column is-1">
+                        <label class="label-title">Kapitola</label>
+                        <div class="chapter-input">
+                            <button id="chapter_input_button" class="toggle" value="#chapter_numbers_bar">
+                                2
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="column is-1 play-button-container" style="text-align: center;  display: inline-block; ">
+                        <label class="label-title">Počúvať</label>
+                        <div class="play-button">
+                            <img src="/img/icons/play-button-blue.svg">
+                        </div>
+
+                        <div class="audio-bible-pop-up">
+                            Všimli ste si, že Slovenský ekumenický preklad môžete aj počúvať?
+                        </div>
+                    </div>
+
+                    <div id="adjust_settings_button" class="column is-1" style="text-align: center;display: inline-block;">
+                        <label class="label-title">Nastavenia</label>
+                        <div class="settings-button">
+                            <img src="/public/img/icons/levels-adjustment.svg">
+                        </div>
+                    </div>
+
+
+
+                    <div class="column hide-on-mobile hide-on-768">
+                    </div>
+
+                </div>
+
+                <div class="columns show-on-mobile" style="display: none !important;">
+                    <div class="column">
+                        <div class="settings-button-scroll">
+                            <img class="menu-svg" src="/public/img/icons/menu.svg">Nastavenia
+                        </div>
+                    </div>
+                </div>
+
+                <div id="text_settings" class="columns hide-on-mobile">
+                    <div class="column">
+
+                        <div class="settings">
+
+                            <div class="checkbox-input">
+                                <label class="switch">
+                                    <input id="checkbox_verses" type="checkbox"  checked >
+                                    <span class="slider round"></span>
+                                </label>
+                                <label class="checkbox-input-label-text"> Zobraziť verše</label>
+                            </div>
+
+                            <div id="checkbox_notes" class="checkbox-input">
+                                <label class='switch'>
+                                    <input id='checkbox_notes_input' class="checkbox-state" type='checkbox' >
+                                    <span class='slider round'></span>
+                                </label>
+                                <label class='checkbox-input-label-text'> Biblické poznámky a odkazy</label>
+                            </div>
+
+
+                            <div class="checkbox-input font-size-checkbox">
+                                <label class='checkbox-input-label-text'><span class="font-change-smaller"  onclick="zmena_pisma(-1)" >-</span> Veľkosť textu <span class="font-change-bigger"  onclick="zmena_pisma(1)" >+</span></label>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="column hide-on-mobile hide-on-768">
+            </div>
+        </div>
+
+        <a style="display: none;" class="deaf-bible-link" href="http://www.biblia.sk/pre-nepocujucich"><img src="/public/img/icons/ruky-nepocujuci.svg"></a>
+
+    </div>
+</div>
+
+<div id="scroll_to_hash" class="container">
+    <div class="columns is-gapless-on-mobile">
+        <div class="column is-12">
+
+
+
+
+            <div class="columns" style="margin-bottom:0;">
+
+                <div class="column hide-on-mobile hide-on-768">
+                </div>
+
+                <div class="column is-8">
+                    <div class="chapter-selection-bar">
+
+                        <div class="columns is-gapless is-mobile">
+                            <div class="column">
+
+                                <div id="previous_chapter" class="previous-chapter-backward" >
+                                    <li><button id="button_previous_chapter" value="1">kapitola 1</button></li>
+                                </div>
+
+                            </div>
+
+                            <div class="column is-6 hide-on-mobile">
+                                <div class="book-name">
+                                    <span class="selected-book-fullname">Genezis — Prvá Mojžišova kniha</span>
+                                </div>
+                            </div>
+
+                            <div class="column">
+
+                                <div id="next_chapter" class="next-chapter-forward" >
+                                    <li><button id="button_next_chapter" value="3">kapitola 3</button></li>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="column hide-on-mobile hide-on-768">
+                </div>
+
+            </div>
+            <div class="columns" style="margin-bottom:0;">
+
+                <div class="column hide-on-mobile hide-on-768">
+                </div>
+
+                <div id="text_content" class="column is-8">
+                    <div id="txt" class="book">
+
+
+                        <div id="translations_bar" class="siblings translations">
+
+                            <div class="show-on-mobile show-on-768">
+                                <img class="cancel-svg" src="/public/img/icons/cancel-x.svg">
+                            </div>
+
+                            <h4>Výber prekladu</h4>
+                            <ul id="list_of_translations" class="translations-nav">
+                                <li value="seb"  class="active-translation" >Ekumenický preklad</li>
+                                <li value="ssv" >Katolícky preklad</li>
+                                <li value="bot" >Botekov preklad</li>
+                                <li value="sep" >Evanjelický preklad</li>
+                                <li value="roh" >Roháčkov preklad</li>
+                                <li value="rom" >Rómska Nová zmluva</li>
+                                <li value="prv" >Pravoslávny preklad evanjelií</li>
+
+                            </ul>
+                        </div>
+
+                        <div id="book_list_bar" class="siblings book-list">
+
+                            <div class="show-on-mobile show-on-768">
+                                <img class="cancel-svg" src="/public/img/icons/cancel-x.svg">
+                            </div>
+
+                            <div class='show-on-mobile show-on-768'><img class='cancel-svg' src='/public/img/icons/cancel-x.svg'></div><ul><div class='columns'><div class='column'><div ><h4>Stará zmluva</h4><div class='book-list-li pentateuch'><li value='gn' class='book-list-item''>Genezis — Prvá Mojžišova kniha</li><li value='ex' class='book-list-item''>Exodus — Druhá Mojžišova kniha</li><li value='lv' class='book-list-item''>Levitikus — Tretia Mojžišova kniha</li><li value='nm' class='book-list-item''>Numeri — Štvrtá Mojžišova kniha</li><li value='dt' class='book-list-item''>Deuteronómium — Piata Mojžišova kniha</li></div><div class='book-list-li historicke'><li value='joz' class='book-list-item''>Jozua</li><li value='sdc' class='book-list-item''>Kniha sudcov</li><li value='rut' class='book-list-item''>Rút</li><li value='1sam' class='book-list-item''>Prvá Samuelova kniha</li><li value='2sam' class='book-list-item''>Druhá Samuelova kniha</li><li value='1krl' class='book-list-item''>Prvá kniha kráľov</li><li value='2krl' class='book-list-item''>Druhá kniha kráľov</li><li value='1krn' class='book-list-item''>Prvá kniha kroník</li><li value='2krn' class='book-list-item''>Druhá kniha kroník</li><li value='ezd' class='book-list-item''>Ezdráš</li><li value='neh' class='book-list-item''>Nehemiáš</li><li value='est' class='book-list-item''>Ester</li></div><div class='book-list-li poucne'><li value='job' class='book-list-item''>Jób</li><li value='z' class='book-list-item''>Žalmy</li><li value='pris' class='book-list-item''>Príslovia</li><li value='koh' class='book-list-item''>Kohelet — Kazateľ</li><li value='vlp' class='book-list-item''>Veľpieseň</li></div><div class='book-list-li prorocke'><li value='iz' class='book-list-item''>Izaiáš</li><li value='jer' class='book-list-item''>Jeremiáš</li><li value='nar' class='book-list-item''>Náreky</li><li value='ez' class='book-list-item''>Ezechiel</li><li value='dan' class='book-list-item''>Daniel</li><li value='oz' class='book-list-item''>Ozeáš</li><li value='joel' class='book-list-item''>Joel</li><li value='am' class='book-list-item''>Amos</li><li value='abd' class='book-list-item''>Abdiáš</li><li value='jon' class='book-list-item''>Jonáš</li><li value='mich' class='book-list-item''>Micheáš</li><li value='nah' class='book-list-item''>Nahum</li><li value='hab' class='book-list-item''>Habakuk</li><li value='sof' class='book-list-item''>Sofoniáš</li><li value='ag' class='book-list-item''>Aggeus</li><li value='zach' class='book-list-item''>Zachariáš</li><li value='mal' class='book-list-item''>Malachiáš</li></div><div class='book-list-li deutero'><li value='tob' class='book-list-item''>Tobiáš</li><li value='jdt' class='book-list-item''>Judita</li><li value='estgr' class='book-list-item''>Ester (grécka verzia)</li><li value='mud' class='book-list-item''>Kniha múdrosti</li><li value='sir' class='book-list-item''>Kniha Sirachovca</li><li value='bar' class='book-list-item''>Baruch (a Jeremiášov list)</li><li value='dangr' class='book-list-item''>Prídavky ku knihe Daniel</li><li value='1mak' class='book-list-item''>Prvá kniha Makabejcov</li><li value='2mak' class='book-list-item''>Druhá kniha Makabejcov</li></div></div></div><div class='column'><h4>Nová zmluva</h4><div class='book-list-li evanjelia'><li value='mt' class='book-list-item''>Evanjelium podľa Matúša</li><li value='mk' class='book-list-item''>Evanjelium podľa Marka</li><li value='lk' class='book-list-item''>Evanjelium podľa Lukáša</li><li value='jn' class='book-list-item''>Evanjelium podľa Jána</li></div><div class='book-list-li historicke-nz'><li value='sk' class='book-list-item''>Skutky apoštolov</li></div><div class='book-list-li listy'><li value='rim' class='book-list-item''>List Rimanom</li><li value='1kor' class='book-list-item''>Prvý list Korinťanom</li><li value='2kor' class='book-list-item''>Druhý list Korinťanom</li><li value='ga' class='book-list-item''>List Galaťanom</li><li value='ef' class='book-list-item''>List Efezanom</li><li value='flp' class='book-list-item''>List Filipanom</li><li value='kol' class='book-list-item''>List Kolosanom</li><li value='1tes' class='book-list-item''>Prvý list Tesaloničanom</li><li value='2tes' class='book-list-item''>Druhý list Tesaloničanom</li><li value='1tim' class='book-list-item''>Prvý list Timotejovi</li><li value='2tim' class='book-list-item''>Druhý list Timotejovi</li><li value='tit' class='book-list-item''>List Títovi</li><li value='flm' class='book-list-item''>List Filemonovi</li><li value='heb' class='book-list-item''>List Hebrejom</li><li value='jk' class='book-list-item''>Jakubov list</li><li value='1pt' class='book-list-item''>Prvý Petrov list</li><li value='2pt' class='book-list-item''>Druhý Petrov list</li><li value='1jn' class='book-list-item''>Prvý Jánov list</li><li value='2jn' class='book-list-item''>Druhý Jánov list</li><li value='3jn' class='book-list-item''>Tretí Jánov list</li><li value='jud' class='book-list-item''>Júdov list</li></div><div class='book-list-li prorocke-nz'><li value='zj' class='book-list-item''>Zjavenie Jána</li></div></div></div></ul>
+                        </div>
+
+                        <div id="chapter_numbers_bar" class="siblings chapter-numbers">
+
+                            <div class="show-on-mobile show-on-768">
+                                <img class="cancel-svg" src="/public/img/icons/cancel-x.svg">
+                            </div>
+
+                            <h4>Výber kapitoly</h4>
+                            <ul id="chapter_nav_list" class="chapter-nav">
+                                <li class='chapter-number'>1</li><li class='chapter-number active-chapter'>2</li><li class='chapter-number'>3</li><li class='chapter-number'>4</li><li class='chapter-number'>5</li><li class='chapter-number'>6</li><li class='chapter-number'>7</li><li class='chapter-number'>8</li><li class='chapter-number'>9</li><li class='chapter-number'>10</li><li class='chapter-number'>11</li><li class='chapter-number'>12</li><li class='chapter-number'>13</li><li class='chapter-number'>14</li><li class='chapter-number'>15</li><li class='chapter-number'>16</li><li class='chapter-number'>17</li><li class='chapter-number'>18</li><li class='chapter-number'>19</li><li class='chapter-number'>20</li><li class='chapter-number'>21</li><li class='chapter-number'>22</li><li class='chapter-number'>23</li><li class='chapter-number'>24</li><li class='chapter-number'>25</li><li class='chapter-number'>26</li><li class='chapter-number'>27</li><li class='chapter-number'>28</li><li class='chapter-number'>29</li><li class='chapter-number'>30</li><li class='chapter-number'>31</li><li class='chapter-number'>32</li><li class='chapter-number'>33</li><li class='chapter-number'>34</li><li class='chapter-number'>35</li><li class='chapter-number'>36</li><li class='chapter-number'>37</li><li class='chapter-number'>38</li><li class='chapter-number'>39</li><li class='chapter-number'>40</li><li class='chapter-number'>41</li><li class='chapter-number'>42</li><li class='chapter-number'>43</li><li class='chapter-number'>44</li><li class='chapter-number'>45</li><li class='chapter-number'>46</li><li class='chapter-number'>47</li><li class='chapter-number'>48</li><li class='chapter-number'>49</li><li class='chapter-number'>50</li>
+                            </ul>
+                        </div>
+
+                        <div id="bookmarks_bar" class="siblings bookmark-list">
+
+                            <div class="show-on-mobile show-on-768">
+                                <img class="cancel-svg" src="/public/img/icons/cancel-x.svg">
+                            </div>
+
+                            <h4>Záložky</h4>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div id="text" class="text removeTextNodes"
+                             style="font-size:16px;" >
+
+                            <a href='/porovnanie/seb/gn/2/13'>13</a><span class='text-verse'> Meno druhej rieky je Gichón. Tá obteká celú krajinu Kúš.<note class="hide-notes-and-references"  caller="-" class="x"><char class="xo" closed="false">2,13 </char><char class="xt" closed="false">1Krľ 1,45</char></note> </span><a href='/porovnanie/seb/gn/2/14'>14</a><span class='text-verse'> Meno tretej rieky je Tigris<note class="hide-notes-and-references"  caller="+" class="f"><char class="fr" closed="false">2,14 </char><char class="ft" closed="false">Hebr. Chiddekel.</char></note>. Tá tečie na východ od Asýrie. Štvrtou riekou je Eufrat<note class="hide-notes-and-references"  caller="+" class="f"><char class="fr" closed="false">2,14 </char><char class="ft" closed="false">Hebr. Perát.</char></note>.<note class="hide-notes-and-references"  caller="-" class="x"><char class="xo" closed="false">2,14 </char><char class="xt" closed="false">Gn 41,1</char></note>  </span>
+
+                        </div>
+
+
+                        <p id="copyright_info" class="copyright-info">Slovenská biblická spoločnosť © <a href="http://biblickaspolocnost.sk/" target="_blank">www.biblickaspolocnost.sk</a> | Slovenský ekumenický preklad, 4. opravené vydanie, 2018.</p>
+
+                    </div>
+                </div>
+
+                <div class="column hide-on-mobile hide-on-768">
+                </div>
+
+            </div>
+
+            <div class="columns" style="margin-bottom:0;">
+
+                <div class="column hide-on-mobile hide-on-768">
+                </div>
+
+                <div class="column is-8">
+                    <div class="chapter-selection-bar">
+
+                        <div class="columns is-gapless is-mobile">
+                            <div class="column">
+
+                                <div id="previous_chapter" class="previous-chapter-backward" >
+                                    <li><button id="button_previous_chapter" value="1">kapitola 1</button></li>
+                                </div>
+
+                            </div>
+
+                            <div class="column is-6 hide-on-mobile">
+                                <div class="book-name">
+                                    <span class="selected-book-fullname">Genezis — Prvá Mojžišova kniha</span>
+                                </div>
+                            </div>
+
+                            <div class="column">
+
+                                <div id="next_chapter" class="next-chapter-forward" >
+                                    <li><button id="button_next_chapter" value="3">kapitola 3</button></li>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="column hide-on-mobile hide-on-768">
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container-fluid sbs-products-container">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h2>Novinky zo Slovenskej biblickej spoločnosti</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container sbs-products">
+        <div class="columns is-multiline is-12">
+            <div class="column slide-item">
+                <a href="https://biblickaspolocnost.sk/sbs/dve-percenta" target="_blank"><img class="img-responsive" style="max-height:140px" src="/public/img/sidebar/dve-percenta.jpg"></a>
+                <div class="slide-item-title">
+                    <h3></h3>
+                </div>
+            </div>
+            <div class="column slide-item">
+                <a href="https://eshop.biblia.sk/produkt/2104/biblia-slovenska-ekumenicky-preklad-standardny-format-2018" target="_blank"><img class="img-responsive" style="max-height:140px" src="/public/img/sidebar/hneda.jpg"></a>
+                <div class="slide-item-title">
+                    <h3>Slovenský ekumenický preklad, štandardný formát, 2018</h3>
+                </div>
+            </div>
+            <div class="column slide-item">
+                <a href="https://eshop.biblia.sk/produkt/2105/biblia-slovenska-ekumenicky-preklad-s-dt-standardny-format-2018" target="_blank"><img class="img-responsive" style="max-height:140px" src="/public/img/sidebar/siva.jpg"></a>
+                <div class="slide-item-title">
+                    <h3>Slovenský ekumenický preklad, štandardný formát s DT, 2018</h3>
+                </div>
+            </div>
+            <div class="column slide-item">
+                <a href="https://eshop.biblia.sk/produkt/2114/nz-zalmy-a-prislovia-vreckovy-format-modra-ekumenicky-preklad-2018" target="_blank"><img class="img-responsive" style="max-height:140px" src="/public/img/sidebar/2114190225102814.jpg"></a>
+                <div class="slide-item-title">
+                    <h3>NZ, žalmy a príslovia, Slovenský ekumenický preklad, 2018
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="sbs-work">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+
+
+
+                <div class="about-sbs">
+
+                    <img class="white-sbs-logo" src="/public/img/icons/logo_B_biele_svg.svg">
+
+                    <h2>V Slovenskej biblickej spoločnosti veríme,<br/>
+                        že Božie slovo nestratilo na svojej večnej hodnote.<br/>
+                        Preto ho s Božou pomocou šírime v tlačenej, elektronickej, ale aj v audio a video podobe.</h2>
+
+                    <a class="sbs-redirect-button projects" href="https://biblickaspolocnost.sk/projekty/aktualne" target="_blank">Projekty</a>
+                    <a class="sbs-redirect-button publishing" href="https://biblickaspolocnost.sk/vydavatelstvo/2017" target="_blank">Vydavateľstvo</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="footer-content">
+
+                    <div class="columns">
+                        <div class="column" style="text-align:center;margin-bottom:15px;">
+
+                            <a class="newsletter" href="https://pub.s7.exacttarget.com/ddi0b4qzopz" target="_blank">Chcem dostávať <span class="news-info">informácie o novinkách</span><br/>zo Slovenskej biblickej spoločnosti</a>
+
+                        </div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="column donation">
+
+                            <a class="donation-button" href="https://biblickaspolocnost.darujme.sk/2203/" target="_blank">Podporte nás</a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="columns">
+                        <div class="column contact-panel">
+                            <h4><img class="nav-svg-icon" src="/public/img/icons/location.svg"> Adresa</h4>
+                            <p>
+                                Slovenská biblická spoločnosť<br/>
+                                Mlynská 43<br/>
+                                974 09 Banská Bystrica 9<br/>
+                            </p>
+                        </div>
+
+                        <div class="column contact-panel">
+                            <h4><img class="nav-svg-icon" src="/public/img/icons/call-answer.svg"> Telefón</h4>
+                            <p>048/413 41 91</p>
+                            <h4><img class="nav-svg-icon" src="/public/img/icons/mail.svg"> E-mail</h4>
+                            <p><a class="office-email" href="/kontaktny-formular">office@biblia.sk</a></p>
+                        </div>
+                        <div class="column contact-panel">
+                            <h4><img class="nav-svg-icon" src="/public/img/icons/clock.svg"> Otváracie hodiny</h4>
+                            <p>
+                                <b>9:00 - 14:00</b> | Pondelok<br/>
+                                <b>9:00 - 14:00</b> | Utorok	<br/>
+                                <b>9:00 - 16:00</b> | Streda	<br/>
+                                <b>9:00 - 14:00</b> | Štvrtok <br/>
+                                <b>9:00 - 14:00</b> | Piatok	<br/>
+                                <b>zatvorené</b> &nbsp;&nbsp;| Sobota a Nedeľa
+                            </p>
+                        </div>
+                        <div class="column contact-panel-links">
+                            <h4><img class="nav-svg-icon" src="/public/img/icons/link.svg"> Odkazy</h4>
+                            <a href="https://biblickaspolocnost.sk/" target="_blank">Slovenská biblická spoločnosť</a><br/>
+                            <a href="http://www.biblickaspolocnost.sk/obchod/index.php" target="_blank">E-shop</a><br/>
+                            <a class="facebook-link" href="https://www.facebook.com/SlovenskaBiblickaSpolocnost/" target="_blank"><img class="svg-facebook" src="/public/img/icons/facebook.svg"> Facebook</a>
+                        </div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="column">
+                            <div class="bottom-footer">
+                                <p class="copyright">© 2019 Slovenská biblická spoločnosť | Všetky práva vyhradené<br/><i>...združujeme ľudí, ktorých spája láska k Bohu a k Jeho slovu</i></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="audio_bible_player" class="audio-bible-player">
+    <p class="audio-bible-info-banner" style="color: #fafafa;text-align: center;padding: 3px 15px;background: #232323;margin: 0;">
+        Počúvať Bibliu môžete aj bez internetu. Slovenský ekumenický preklad Biblie v audio formáte <span style="color: #00b6f0;">na stiahnutie</span> si môžete zakúpiť na <a style="color:#00b6f0;text-decoration:none;font-weight:700;cursor:pointer;" href="https://audio.biblia.sk/" target="_blank">tomto mieste</a>.
+        <span class="close-button-audio">(skryť informáciu)</span>
+    </p>
+    <audio id="player" controls="controls" preload="auto" controls controlsList="nodownload">
+    </audio>
+</div>
+
+<script
+        src="/public/js/jquery.min.js"></script>
+
+<script
+        src="/public/js/jquery-ui.min.js"></script>
+
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+<script
+        src="/public/js/select2.min.js"></script>
+
+<script
+        src="/public/js/plyr.min.js"></script>
+
+<script
+        src="/public/js/nprogress.js"></script>
+
+<script
+        src="/public/js/functions.min.js"></script>
+
+<script
+        src="/public/js/app.min.js"></script>
+
+<script
+        src="/public/js/app.compare.min.js"></script>
+
+<script
+        src="/public/js/app.search.min.js"></script>
+
+
+</body>
+</html>
